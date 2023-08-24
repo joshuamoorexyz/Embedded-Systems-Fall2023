@@ -1,37 +1,98 @@
 <!doctype html>
 <html>
   <head>
-    <title>Embedded Systems Fall 2023 Dissection Report</title>
+    <title>Embedded Systems Dissection Report</title>
     <style>
     body {
-      text-align: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: left;
+      font-family: Arial, sans-serif;
+      font-size:22px;
     }
-    /* Add additional styles as needed */
+
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+      padding: 10px;
+      background-color: #f5f5f5;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-top: 20px;
+
+    }
+
+    .title {
+      font-size:35px;
+      font-weight:bold;
+      margin-bottom:20px;
+      text-align: center;
+
+    }
   </style>
+  <script>
+    function toggleInfo(id) {
+      var info = document.getElementById(id);
+      var listItem = document.getElementById(id+"-list");
+      if (info.style.display === "none") {
+        info.style.display = "block";
+        listItem.textContent = "Click to collapse";
+      } else {
+        info.style.display = "none";
+        listItem.textContent = toTitleCase(id.split('-')[1]); //dynamically set content based on ID
+      }
+    }
+
+    function toTitleCase(str) {
+      return str.replace(/\w+/g, function(txt) {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      });
+    }
+
+    // Initialize sections as collapsed
+    document.addEventListener("DOMContentLoaded", function() {
+      var sections = document.querySelectorAll("ul.hidden");
+      sections.forEach(function(section) {
+        section.style.display = "none";
+      });
+    });
+
+
+  </script>
   </head>
   <body>
-    
-<ol type="I">
-  <li>Introduction:</li>
-  <ul>
-    <li>Personal Introduction:</li>
-    <li>Background and motivation for choosing the product</li>
-  </ul>
-  <li>Product Market and Retail Information</li>
-  <ul>
+
+    <div class="container">
+      <div class="title">Embedded Systems Dissection Report</div>
+      <div class="title">Joshua Moore</div>
+      <ol type="I">
+        <li id="1-intro-list" onclick="toggleInfo('1-intro')">Introduction</li>
+        <ul id="1-intro" class="hidden">
+          <li>Introduction: Mainstays Digital Kitchen Timer, Magnetic Countdown Count up Timer with Large LCD Display</li>
+          <li>Personal Introduction: My name is Joshua Moore. I am a PhD student in Electrical and Computer Engineering involved in research of NextG Wireless Communications with a focus on ORAN, Ran Management and Orchestration, and Artificial Intelligence.</li>
+          <li>Background and motivation for choosing the product: Dissecting a kitchen timer provides an opportunity to intimately understand the construction of an embedded systems device. By examining its components and their interplay, one gains practical insights into digital electronics, enhancing knowledge of timekeeping mechanisms and fostering a deeper appreciation for everyday technology. </li>
+        </ul>
+  <li id="2-product-info" onclick="toggleInfo('2-product')">Product Market and Retail Information</li>
+  <ul id="2-product" class="hidden">
     <li>Product History</li>
     <li>MSRP and street prices</li>
     <li>Retail Outlets</li>
     <li>Rebranded/OEM versions</li>
   </ul>
-  <li>Dissection Photo Journal</li>
-  <li>Product Operation</li>
-  <ul>
+  <li id="3-dissection-journal" onclick="toggleInfo('3-dissection')">Dissection Photo Journal</li>
+  <ul id="3-dissection" class="hidden">
+  </ul>
+  <li id="4-product-operation" onclick="toggleInfo('4-operation')">Product Operation</li>
+  <ul id="4-operation" class="hidden">
     <li>Human-machine interfaces</li>
     <li>Usage timing diagrams</li>
   </ul>
-  <li>Product Analysis</li>
-  <ul>
+  <li id="5-product-analysis" onclick="toggleInfo('5-analysis')">Product Analysis</li>
+  <ul id="5-analysis" class="hidden">
     <li>High-level product design diagram</li>
     <li>Detailed design block diagrams for electronic systems</li>
     <li>Tables showing expected and extreme values during operating including frequencies,voltages,current,power consumption,and battery lifetime</li>
@@ -39,8 +100,11 @@
     <li>Complete eletrical BoM (including component costs breakdown)</li>
     <li>Thorough non-electrical BoM (including materieral costs breakdown)</li>
   </ul>
-  <li>Product Reassembly (product must still work as initally designed)</li>
-  <li>Lessons Learned</li>
+  <li id="6-product-reassembly" onclick="toggleInfo('6-reassembly')">Product Reassembly</li>
+  <ul id="6-reassembly" class="hidden">
+  </ul>
+  <li id="7-lessons-learned" onclick="toggleInfo('7-lessons')">Lessons Learned</li>
+  <ul id="7-lessons" class="hidden">
 </ol>
   </body>
 </html>
