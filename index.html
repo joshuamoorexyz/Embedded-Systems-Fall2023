@@ -45,6 +45,43 @@
     }
 
 
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust column width as needed */
+      gap: 10px; /* Adjust the gap between images */
+    }
+    
+    .photo-grid img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ddd; /* Add a border to images */
+      border-radius: 5px; /* Add rounded corners to images */
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow effect */
+    }
+    
+
+    .image-container {
+      position: relative;
+  }
+
+  .image-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: whitesmoke;
+      padding: 5px;
+      text-align: center;
+  }
+
+    /* Style the toggle button and hidden content (JavaScript needed) */
+    .hidden {
+      display: none;
+    }
+
+
+
   </style>
   <script>
     function toggleInfo(id) {
@@ -74,6 +111,17 @@
     });
 
 
+// JavaScript function for toggling the hidden content
+function toggleInfo(id) {
+  const element = document.getElementById(id);
+  if (element.style.display === 'none' || element.style.display === '') {
+    element.style.display = 'block';
+  } else {
+    element.style.display = 'none';
+  }
+}
+
+
   </script>
   </head>
   <body>
@@ -89,62 +137,194 @@
       <ol type="I">
         <li id="1-intro-list" onclick="toggleInfo('1-intro')">Introduction</li>
         <ul id="1-intro" class="hidden">
-          <li>Introduction: Mainstays Digital Kitchen Timer, Magnetic Countdown Count up Timer with Large LCD Display</li>
-          <li>Personal Introduction: My name is Joshua Moore. I am a PhD student in Electrical and Computer Engineering involved in research of NextG Wireless Communications with a focus on ORAN, Ran Management and Orchestration, and Artificial Intelligence.</li>
-          <li>Background and motivation for choosing the product: Dissecting a kitchen timer provides an opportunity to intimately understand the construction of an embedded systems device. By examining its components and their interplay, one gains practical insights into digital electronics, enhancing knowledge of timekeeping mechanisms and fostering a deeper appreciation for everyday technology. </li>
+          <li> <strong>Mainstays Digital Kitchen Timer</strong> Magnetic Countdown Count up Timer with Large LCD Display</li>
+          <li class="photo-grid">
+          <img src="895175717718/File1.jpeg" alt="Image 1">
+          </li>
+          <li>Private label brands, like Mainstays, are products that are sold under the retailer's own brand name rather than the name of the manufacturer. These brands are often developed by or for the retailer to offer consumers more affordable alternatives to national or name brands. Private label products can be found in various categories, including food, clothing, electronics, and home goods.
+            Walmart, being one of the largest retail chains in the world, has a history of offering private label brands to its customers. These brands are typically designed to provide consumers with quality products at competitive prices. They work with manufacturers and suppliers to produce goods under their private label brands, and these products are then sold exclusively in Walmart stores or online.</li>
+          <li>In a New York Times article from 2003, a Wal-Mart spokeswoman, Melissa Berryhill, said the Mainstays label was trademarked for storage bins in 1996 and had broadened to new items every year. ''Now it's trademarked for all categories,'' she said, ''like office supplies, outdoor furniture and ironing board covers.''</li>
+          <li><strong>Personal Introduction:</strong> My name is Joshua Moore. I am a PhD student in Electrical and Computer Engineering involved in research of NextG Wireless Communications with a focus on ORAN, Ran Management and Orchestration, and Artificial Intelligence.</li>
+          <li><strong>Background and motivation for choosing the product:</strong> Dissecting a kitchen timer provides an opportunity to intimately understand the construction of an embedded systems device. By examining its components and their interplay, one gains practical insights into digital electronics, enhancing knowledge of timekeeping mechanisms and fostering a deeper appreciation for everyday technology. </li>
         </ul>
   <li id="2-product-info" onclick="toggleInfo('2-product')">Product Market and Retail Information</li>
   <ul id="2-product" class="hidden">
-    <li>Product History</li>
-    <li>MSRP and street prices</li>
-    <li>Retail Outlets</li>
-    <li>Rebranded/OEM versions</li>
+    <li><strong>Product History:</strong> Introduced in the Mainstays line for the retailer Walmart in 2023</li>
+    <li><strong>MSRP and street prices:</strong> $15.00 with street prices ~$5.00</li>
+    <li><strong>Retail Outlets:</strong> Walmart</li>
+    <li><strong>Rebranded/OEM versions:</strong> None</li>
   </ul>
   <li id="3-dissection-journal" onclick="toggleInfo('3-dissection')">Dissection Photo Journal</li>
   <ul id="3-dissection" class="hidden">
-    <li>
-      <!-- The journal includes 17 images in total, each labeled with a corresponding number.
-         The images provide a visual documentation of the dissection procedure, presenting different
-          angles and stages of the process-->
-      <img src="895175717718/File 1.jpeg" alt="Image 1">
-      <img src="895175717718/File 2.jpeg" alt="Image 2">
-      <img src="895175717718/File 3.jpeg" alt="Image 3">
-      <img src="895175717718/File 4.jpeg" alt="Image 4">
-      <img src="895175717718/File 5.jpeg" alt="Image 5">
-      <img src="895175717718/File 6.jpeg" alt="Image 6">
-      <img src="895175717718/File 7.jpeg" alt="Image 7">
-      <img src="895175717718/File 8.jpeg" alt="Image 8">
-      <img src="895175717718/File 9.jpeg" alt="Image 9">
-      <img src="895175717718/File 10.jpeg" alt="Image 10">
-      <img src="895175717718/File 11.jpeg" alt="Image 11">
-      <img src="895175717718/File 12.jpeg" alt="Image 12">
-      <img src="895175717718/File 13.jpeg" alt="Image 13">
-      <img src="895175717718/File 14.jpeg" alt="Image 14">
-      <img src="895175717718/File 15.jpeg" alt="Image 15">
-      <img src="895175717718/File 16.jpeg" alt="Image 16">
-      <img src="895175717718/File 17.jpeg" alt="Image 17">
+    <li class="photo-grid">
+        <!-- The journal includes 17 images in total, each labeled with a corresponding number.
+             The images provide a visual documentation of the dissection procedure, presenting different
+              angles and stages of the process-->
 
+        <div class="image-container">
+            <img src="895175717718/File1.jpeg" alt="Image 1">
+            <div class="image-caption">Front view in packaging</div>
+        </div>
+
+        <div class="image-container">
+            <img src="895175717718/File2.jpeg" alt="Image 2">
+            <div class="image-caption">Back view in packaging</div>
+        </div>
+
+        <div class="image-container">
+            <img src="895175717718/File3.jpeg" alt="Image 3">
+            <div class="image-caption">Device off</div>
+        </div>
+
+        <div class="image-container">
+            <img src="895175717718/File4.jpeg" alt="Image 4">
+            <div class="image-caption">Device on</div>
+        </div>
+
+        <div class="image-container">
+            <img src="895175717718/File5.jpeg" alt="Image 5">
+            <div class="image-caption">back of device</div>
+        </div>
+
+        <div class="image-container">
+            <img src="895175717718/File6.jpeg" alt="Image 6">
+            <div class="image-caption">battery compartment</div>
+        </div>
+
+        <div class="image-container">
+            <img src="895175717718/File7.jpeg" alt="Image 7">
+            <div class="image-caption">back removed</div>
+        </div>
+
+        <div class="image-container">
+            <img src="895175717718/File8.jpeg" alt="Image 8">
+            <div class="image-caption">Time adjust mechanism</div>
+        </div>
+
+        <div class="image-container">
+            <img src="895175717718/File9.jpeg" alt="Image 9">
+            <div class="image-caption">time adjust mechanism</div>
+        </div>
+
+        <div class="image-container">
+            <img src="895175717718/File10.jpeg" alt="Image 10">
+            <div class="image-caption">back of board</div>
+        </div>
+
+        <div class="image-container">
+            <img src="895175717718/File11.jpeg" alt="Image 11">
+            <div class="image-caption">front of board</div>
+        </div>
+
+        <div class="image-container">
+            <img src="895175717718/File12.jpeg" alt="Image 12">
+            <div class="image-caption">display</div>
+        </div>
+
+        <div class="image-container">
+            <img src="895175717718/File13.jpeg" alt="Image 13">
+            <div class="image-caption">display working dissasembled</div>
+        </div>
     </li>
-  </ul>
+</ul>
+
   <li id="4-product-operation" onclick="toggleInfo('4-operation')">Product Operation</li>
   <ul id="4-operation" class="hidden">
-    <li>Human-machine interfaces</li>
-    <li>Usage timing diagrams</li>
+    <li><strong>Human-machine interfaces:</strong></li>
+    <li>1. A seven-segment display that visually represents the current count</li>
+    <li>2. An outer ring enabling the users to configure their desired time by rotating the ring clockwise to go up and counter clockwise to go down in time.</li>
+    <li>3. Centrally located start/stop button that initiates or halts the count, regardless of whether the count is incrementing or decrementing. This button also changes the function of the timer to count down or up by holding down the button.</li>
+    <li>4. Speaker alarming the user when the timer has expired.</li>
+    <li>Usage timing diagrams:</li>
+    <img src="895175717718/Embedded Dissection Operations Chart.png" alt="Usage Timing Diagram"  style="max-width: 100%; height: auto;">
   </ul>
   <li id="5-product-analysis" onclick="toggleInfo('5-analysis')">Product Analysis</li>
   <ul id="5-analysis" class="hidden">
-    <li>High-level product design diagram</li>
-    <li>Detailed design block diagrams for electronic systems</li>
-    <li>Tables showing expected and extreme values during operating including frequencies,voltages,current,power consumption,and battery lifetime</li>
-    <li>Complete component level schematics</li>
-    <li>Complete eletrical BoM (including component costs breakdown)</li>
-    <li>Thorough non-electrical BoM (including materieral costs breakdown)</li>
+    <li><strong>High-level product design diagram:</strong></li>
+    <img src="895175717718/highlevel.jpg" alt="highlevel"  style="max-width: 100%; height: auto;">
+
+    <li><strong>Detailed design block diagrams for electronic systems:</strong></li>
+    <img src="895175717718/potentiometer.webp" alt="Schematic"  style="max-width: 100%; height: auto;">
+    <img src="895175717718/oscillator.jpeg" alt="Schematic"  style="max-width: 100%; height: auto;">
+    <img src="895175717718/buzzer.jpeg.bmp" alt="Schematic"  style="max-width: 100%; height: auto;">
+
+    <li><strong>Waveforms and battery lifetime:</strong></li>
+    <figure>
+      <figcaption>Oscillator PWM</figcaption>
+      <img src="895175717718/oscillator.gif" alt="pwm" style="max-width: 100%; height: auto;">
+  </figure>
+    <figure>
+      <figcaption>Push Button PWM</figcaption>
+      <img src="895175717718/pushbutton.gif" alt="pwm" style="max-width: 100%; height: auto;">
+  </figure>
+  <figure>
+    <figcaption>Battery Life Estimates</figcaption>
+    <img src="895175717718/batterylife.jpeg" alt="pwm" style="max-width: 100%; height: auto;">
+</figure>
+
+    <li><strong>Complete component level schematics:</strong></li>
+    <img src="895175717718/File14.jpeg" alt="Schematic"  style="max-width: 100%; height: auto;">
+    <li><strong>Complete eletrical BoM (including component costs breakdown):</strong></li>
+    <img src="895175717718/BOM.jpeg" alt="BOM"  style="max-width: 100%; height: auto;">
+    <li><strong>Thorough non-electrical BoM (including materieral costs breakdown):</strong></li>
+    <img src="895175717718/noneletricbom.jpeg" alt="BOM"  style="max-width: 100%; height: auto;">
+
   </ul>
-  <li id="6-product-reassembly" onclick="toggleInfo('6-reassembly')">Product Reassembly</li>
-  <ul id="6-reassembly" class="hidden">
-  </ul>
-  <li id="7-lessons-learned" onclick="toggleInfo('7-lessons')">Lessons Learned</li>
+
+
+<!-- Reassembly Photo Journal -->
+<li id="6-product-reassembly" onclick="toggleInfo('6-reassembly')">Product Reassembly:</li>
+<ul id="6-reassembly" class="hidden">
+  <li class="photo-grid">
+    <!-- The journal includes 13 images in total, each labeled with a corresponding number.
+         The images provide a visual documentation of the reassembly procedure, presenting different
+         angles and stages of the process-->
+
+
+    <div class="image-container">
+      <img src="895175717718/File11.jpeg" alt="Image 11">
+    </div>
+
+    <div class="image-container">
+      <img src="895175717718/File10.jpeg" alt="Image 10">
+    </div>
+
+    <div class="image-container">
+      <img src="895175717718/File9.jpeg" alt="Image 9">
+    </div>
+
+    <div class="image-container">
+      <img src="895175717718/File8.jpeg" alt="Image 8">
+    </div>
+
+    <div class="image-container">
+      <img src="895175717718/File7.jpeg" alt="Image 7">
+    </div>
+
+    <div class="image-container">
+      <img src="895175717718/File6.jpeg" alt="Image 6">
+    </div>
+
+    <div class="image-container">
+      <img src="895175717718/File5.jpeg" alt="Image 5">
+    </div>
+
+    <div class="image-container">
+      <img src="895175717718/File4.jpeg" alt="Image 4">
+    </div>
+
+    <div class="image-container">
+      <img src="895175717718/File3.jpeg" alt="Image 3">
+    </div>
+
+
+  </li>
+</ul>
+
+
+  <li id="7-lessons-learned" onclick="toggleInfo('7-lessons')">Lessons Learned:</li>
   <ul id="7-lessons" class="hidden">
+    <li>Dissecting an embedded device, which included components like an oscillator, buzzer, LCD, and MCU, yielded a rich array of insights. Firstly, the examination of the oscillator shed light on its critical role in providing precise timing for the device's functions. The buzzer's dissection revealed its intricate circuitry for generating sound signals, showcasing the nuances of audio output mechanisms. Delving into the LCD module underscored the complexity of visual display technologies, offering insights into pixel arrangements and control mechanisms. The examination of the MCU provided a deeper understanding of the device's brain, emphasizing its processing capabilities and the interconnectedness with other components. Each component's dissection, therefore, provided targeted lessons on their functionalities, contributing to a nuanced comprehension of the embedded system's intricate architecture. This hands-on experience not only enhanced technical knowledge but also underscored the importance of a comprehensive understanding of individual components for a holistic grasp of embedded systems.</li>
 </ol>
   </body>
 </html>
